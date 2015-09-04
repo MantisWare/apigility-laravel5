@@ -21,6 +21,6 @@ return array(
     'ZF\\Rest',
     'ZF\\Rpc',
     'ZF\\Versioning',
+    'PMU',
     'matches',
-    'pairmeup',
 );

@@ -2,26 +2,26 @@
 return array(
     'service_manager' => array(
         'factories' => array(
-            'pairmeup\\V1\\Rest\\Users\\UsersResource' => 'pairmeup\\V1\\Rest\\Users\\UsersResourceFactory',
+            'PMU\\V1\\Rest\\Users\\UsersResource' => 'PMU\\V1\\Rest\\Users\\UsersResourceFactory',
         ),
     ),
     'router' => array(
         'routes' => array(
-            'pairmeup.rest.users' => array(
+            'PMU.rest.users' => array(
                 'type' => 'Segment',
                 'options' => array(
                     'route' => '/users[/:id]',
                     'defaults' => array(
-                        'controller' => 'pairmeup\\V1\\Rest\\Users\\Controller',
+                        'controller' => 'PMU\\V1\\Rest\\Users\\Controller',
                     ),
                 ),
             ),
-            'pairmeup.rest.matches' => array(
+            'PMU.rest.matches' => array(
                 'type' => 'Segment',
                 'options' => array(
                     'route' => '/matches[/:matches_id]',
                     'defaults' => array(
-                        'controller' => 'pairmeup\\V1\\Rest\\Matches\\Controller',
+                        'controller' => 'PMU\\V1\\Rest\\Matches\\Controller',
                     ),
                 ),
             ),
@@ -29,14 +29,14 @@ return array(
     ),
     'zf-versioning' => array(
         'uri' => array(
-            0 => 'pairmeup.rest.users',
-            1 => 'pairmeup.rest.matches',
+            0 => 'PMU.rest.users',
+            1 => 'PMU.rest.matches',
         ),
     ),
     'zf-rest' => array(
-        'pairmeup\\V1\\Rest\\Users\\Controller' => array(
-            'listener' => 'pairmeup\\V1\\Rest\\Users\\UsersResource',
-            'route_name' => 'pairmeup.rest.users',
+        'PMU\\V1\\Rest\\Users\\Controller' => array(
+            'listener' => 'PMU\\V1\\Rest\\Users\\UsersResource',
+            'route_name' => 'PMU.rest.users',
             'route_identifier_name' => 'id',
             'collection_name' => 'users',
             'entity_http_methods' => array(
@@ -48,13 +48,13 @@ return array(
             'collection_query_whitelist' => array(),
             'page_size' => 25,
             'page_size_param' => null,
-            'entity_class' => 'pairmeup\\V1\\Rest\\Users\\UsersEntity',
-            'collection_class' => 'pairmeup\\V1\\Rest\\Users\\UsersCollection',
+            'entity_class' => 'PMU\\V1\\Rest\\Users\\UsersEntity',
+            'collection_class' => 'PMU\\V1\\Rest\\Users\\UsersCollection',
             'service_name' => 'users',
         ),
-        'pairmeup\\V1\\Rest\\Matches\\Controller' => array(
-            'listener' => 'pairmeup\\V1\\Rest\\Matches\\MatchesResource',
-            'route_name' => 'pairmeup.rest.matches',
+        'PMU\\V1\\Rest\\Matches\\Controller' => array(
+            'listener' => 'PMU\\V1\\Rest\\Matches\\MatchesResource',
+            'route_name' => 'PMU.rest.matches',
             'route_identifier_name' => 'matches_id',
             'collection_name' => 'matches',
             'entity_http_methods' => array(
@@ -70,62 +70,62 @@ return array(
             'collection_query_whitelist' => array(),
             'page_size' => '5',
             'page_size_param' => null,
-            'entity_class' => 'pairmeup\\V1\\Rest\\Matches\\MatchesEntity',
-            'collection_class' => 'pairmeup\\V1\\Rest\\Matches\\MatchesCollection',
+            'entity_class' => 'PMU\\V1\\Rest\\Matches\\MatchesEntity',
+            'collection_class' => 'PMU\\V1\\Rest\\Matches\\MatchesCollection',
             'service_name' => 'matches',
         ),
     ),
     'zf-content-negotiation' => array(
         'controllers' => array(
-            'pairmeup\\V1\\Rest\\Users\\Controller' => 'Json',
-            'pairmeup\\V1\\Rest\\Matches\\Controller' => 'HalJson',
+            'PMU\\V1\\Rest\\Users\\Controller' => 'Json',
+            'PMU\\V1\\Rest\\Matches\\Controller' => 'HalJson',
         ),
         'accept_whitelist' => array(
-            'pairmeup\\V1\\Rest\\Users\\Controller' => array(
-                0 => 'application/vnd.pairmeup.v1+json',
+            'PMU\\V1\\Rest\\Users\\Controller' => array(
+                0 => 'application/vnd.PMU.v1+json',
                 1 => 'application/hal+json',
                 2 => 'application/json',
             ),
-            'pairmeup\\V1\\Rest\\Matches\\Controller' => array(
-                0 => 'application/vnd.pairmeup.v1+json',
+            'PMU\\V1\\Rest\\Matches\\Controller' => array(
+                0 => 'application/vnd.PMU.v1+json',
                 1 => 'application/hal+json',
                 2 => 'application/json',
             ),
         ),
         'content_type_whitelist' => array(
-            'pairmeup\\V1\\Rest\\Users\\Controller' => array(
-                0 => 'application/vnd.pairmeup.v1+json',
+            'PMU\\V1\\Rest\\Users\\Controller' => array(
+                0 => 'application/vnd.PMU.v1+json',
                 1 => 'application/json',
             ),
-            'pairmeup\\V1\\Rest\\Matches\\Controller' => array(
-                0 => 'application/vnd.pairmeup.v1+json',
+            'PMU\\V1\\Rest\\Matches\\Controller' => array(
+                0 => 'application/vnd.PMU.v1+json',
                 1 => 'application/json',
             ),
         ),
     ),
     'zf-hal' => array(
         'metadata_map' => array(
-            'pairmeup\\V1\\Rest\\Users\\UsersEntity' => array(
+            'PMU\\V1\\Rest\\Users\\UsersEntity' => array(
                 'entity_identifier_name' => 'id',
-                'route_name' => 'pairmeup.rest.users',
+                'route_name' => 'PMU.rest.users',
                 'route_identifier_name' => 'id',
                 'hydrator' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
             ),
-            'pairmeup\\V1\\Rest\\Users\\UsersCollection' => array(
+            'PMU\\V1\\Rest\\Users\\UsersCollection' => array(
                 'entity_identifier_name' => 'id',
-                'route_name' => 'pairmeup.rest.users',
+                'route_name' => 'PMU.rest.users',
                 'route_identifier_name' => 'id',
                 'is_collection' => true,
             ),
-            'pairmeup\\V1\\Rest\\Matches\\MatchesEntity' => array(
+            'PMU\\V1\\Rest\\Matches\\MatchesEntity' => array(
                 'entity_identifier_name' => 'id',
-                'route_name' => 'pairmeup.rest.matches',
+                'route_name' => 'PMU.rest.matches',
                 'route_identifier_name' => 'matches_id',
                 'hydrator' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
             ),
-            'pairmeup\\V1\\Rest\\Matches\\MatchesCollection' => array(
+            'PMU\\V1\\Rest\\Matches\\MatchesCollection' => array(
                 'entity_identifier_name' => 'id',
-                'route_name' => 'pairmeup.rest.matches',
+                'route_name' => 'PMU.rest.matches',
                 'route_identifier_name' => 'matches_id',
                 'is_collection' => true,
             ),
@@ -133,7 +133,7 @@ return array(
     ),
     'zf-mvc-auth' => array(
         'authorization' => array(
-            'pairmeup\\V1\\Rest\\Users\\Controller' => array(
+            'PMU\\V1\\Rest\\Users\\Controller' => array(
                 'collection' => array(
                     'GET' => false,
                     'POST' => false,
@@ -153,22 +153,22 @@ return array(
     ),
     'zf-apigility' => array(
         'db-connected' => array(
-            'pairmeup\\V1\\Rest\\Matches\\MatchesResource' => array(
-                'adapter_name' => 'pairmeup',
+            'PMU\\V1\\Rest\\Matches\\MatchesResource' => array(
+                'adapter_name' => 'PMU',
                 'table_name' => 'matches',
                 'hydrator_name' => 'Zend\\Stdlib\\Hydrator\\ArraySerializable',
-                'controller_service_name' => 'pairmeup\\V1\\Rest\\Matches\\Controller',
+                'controller_service_name' => 'PMU\\V1\\Rest\\Matches\\Controller',
                 'entity_identifier_name' => 'id',
-                'table_service' => 'pairmeup\\V1\\Rest\\Matches\\MatchesResource\\Table',
+                'table_service' => 'PMU\\V1\\Rest\\Matches\\MatchesResource\\Table',
             ),
         ),
     ),
     'zf-content-validation' => array(
-        'pairmeup\\V1\\Rest\\Matches\\Controller' => array(
-            'input_filter' => 'pairmeup\\V1\\Rest\\Matches\\Validator',
+        'PMU\\V1\\Rest\\Matches\\Controller' => array(
+            'input_filter' => 'PMU\\V1\\Rest\\Matches\\Validator',
         ),
     ),
     'input_filter_specs' => array(
-        'pairmeup\\V1\\Rest\\Matches\\Validator' => array(),
+        'PMU\\V1\\Rest\\Matches\\Validator' => array(),
     ),
 );

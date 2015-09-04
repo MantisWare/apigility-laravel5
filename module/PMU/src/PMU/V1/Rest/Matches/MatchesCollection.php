@@ -1,5 +1,5 @@
 <?php
-namespace pairmeup\V1\Rest\Matches;
+namespace PMU\V1\Rest\Matches;
 
 use Zend\Paginator\Paginator;
 

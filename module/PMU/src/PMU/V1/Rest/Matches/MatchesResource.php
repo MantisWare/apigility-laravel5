@@ -1,18 +1,11 @@
 <?php
-namespace pairmeup\V1\Rest\Users;
+namespace PMU\V1\Rest\Matches;
 
 use ZF\ApiProblem\ApiProblem;
 use ZF\Rest\AbstractResourceListener;
 
-class UsersResource extends AbstractResourceListener
+class MatchesResource extends AbstractResourceListener
 {
-    protected $mapper;
-
-    public function __construct( $mapper)
-    {
-        $this->mapper = $mapper;
-    }
-
     /**
      * Create a resource
      *
@@ -65,8 +58,7 @@ class UsersResource extends AbstractResourceListener
      */
     public function fetchAll($params = array())
     {
-        return $this->mapper->fetchAll();
-        //return new ApiProblem(405, 'The GET method has not been defined for collections');
+        return new ApiProblem(405, 'The GET method has not been defined for collections');
     }
 
     /**

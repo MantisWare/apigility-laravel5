@@ -1,5 +1,5 @@
 <?php
-namespace pairmeup;
+namespace PMU;
 
 use ZF\Apigility\Provider\ApigilityProviderInterface;
 

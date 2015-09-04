@@ -21,5 +21,5 @@ return array(
     'ZF\\Rest',
     'ZF\\Rpc',
     'ZF\\Versioning',
-    17 => 'pairmeup',
+    'PMU',
 );
